@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robinson Electrical Limited | Electricians, Stratford</title>
+<meta name="description" content="Robinson Electrical Limited. Registered electricians in Stratford, Taranaki. Rewires, switchboards, new builds, farm electrical and lighting. Call 021 338 390.">
+<meta property="og:title" content="Robinson Electrical Limited | Electricians, Stratford">
+<meta property="og:description" content="Registered electricians for Stratford and central Taranaki. Rewires, switchboards, new builds and farm work. Call 021 338 390.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/hero-1.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2315181d'/%3E%3Cpath d='M36 10 18 36h11l-3 18 20-28H34l2-16z' fill='%23ef8a1d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#15181d;
+  --ink-2:#1d2127;
+  --ink-3:#262b33;
+  --bone:#f3f2ee;
+  --bone-2:#e9e7e1;
+  --body:#3a3f47;
+  --mut:#5e646c;
+  --mut-d:#9aa1ab;
+  --accent:#ef8a1d;
+  --accent-d:#c96f0f;
+  --line:rgba(21,24,29,.12);
+  --line-d:rgba(243,242,238,.14);
+  --r:14px;
+  --disp:"Oswald",sans-serif;
+  --sans:"Public Sans",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--body);background:var(--bone);font-size:16px;line-height:1.7;overflow-x:hidden}
+img{max-width:100%;display:block;image-orientation:from-image}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--disp);color:var(--ink);line-height:1.12;text-wrap:balance}
+h2{font-size:clamp(1.9rem,4.2vw,2.9rem);font-weight:600;letter-spacing:.01em;text-transform:uppercase}
+.sub{max-width:62ch;margin-top:14px;color:var(--mut)}
+.dark h2{color:var(--bone)}
+.dark .sub{color:var(--mut-d)}
+::selection{background:var(--accent);color:#fff}
+
+/* intro overlay */
+#intro{position:fixed;inset:0;z-index:200;background:var(--ink);display:flex;align-items:center;justify-content:center;transition:transform .7s cubic-bezier(.7,0,.2,1) .9s,visibility 0s 1.7s}
+#intro .mark{font-family:var(--disp);font-weight:600;text-transform:uppercase;letter-spacing:.24em;color:var(--bone);font-size:clamp(1rem,3vw,1.5rem);opacity:0;transform:translateY(14px);animation:introIn .7s cubic-bezier(.2,.7,.2,1) .15s forwards}
+#intro .mark b{color:var(--accent);font-weight:600}
+@keyframes introIn{to{opacity:1;transform:none}}
+body.loaded #intro{transform:translateY(-100%);visibility:hidden}
+@media (prefers-reduced-motion: reduce){
+  #intro{display:none}
+}
+
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(21,24,29,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line-d)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1160px;margin:0 auto;padding:0 22px}
+.logo{font-family:var(--disp);font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--bone);font-size:1.02rem;line-height:1;display:flex;align-items:center;gap:10px}
+.logo svg{width:22px;height:22px;flex:none}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none}
+.nav-links a{color:#c8cdd4;font-size:.92rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-phone{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border:1px solid rgba(239,138,29,.55);border-radius:999px;color:#fff;font-weight:600;font-size:.92rem;line-height:1;transition:background .2s,border-color .2s}
+.nav-phone svg{width:15px;height:15px}
+.nav-phone:hover{border-color:var(--accent);color:var(--accent)}
+#navToggle{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;color:var(--bone)}
+#navToggle svg{width:26px;height:26px}
+@media (max-width:860px){
+  .nav-links{position:fixed;top:68px;left:0;right:0;background:var(--ink);flex-direction:column;align-items:stretch;gap:0;padding:8px 22px 18px;border-bottom:1px solid var(--line-d);transform:translateY(-130%);transition:transform .35s cubic-bezier(.2,.7,.2,1);z-index:-1}
+  .nav-links.open{transform:none}
+  .nav-links li a{display:flex;align-items:center;min-height:48px;font-size:1.05rem;border-bottom:1px solid rgba(243,242,238,.07)}
+  .nav-links li:last-child{margin-top:12px}
+  .nav-links .nav-phone{width:100%;justify-content:center;height:48px}
+  #navToggle{display:inline-flex;align-items:center;justify-content:center}
+}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;background:var(--ink);overflow:hidden;padding:110px 0 64px}
+.hero-slides{position:absolute;inset:0}
+.hero-slides .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease}
+.hero-slides .slide.on{opacity:1}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(21,24,29,.88) 8%,rgba(21,24,29,.62) 46%,rgba(21,24,29,.38) 100%)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;color:#e6b47f;font-weight:600;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase}
+.hero-eyebrow svg{width:14px;height:14px}
+.hero h1{margin-top:16px;color:#fff;font-size:clamp(2.5rem,6.4vw,4.35rem);font-weight:600;text-transform:uppercase;letter-spacing:.005em;max-width:15ch}
+.hero p{margin-top:16px;color:#d7dbe0;max-width:44ch;font-size:1.06rem}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:1rem;line-height:1;transition:transform .2s,background .2s,border-color .2s,color .2s}
+.btn svg{width:17px;height:17px}
+.btn:active{transform:scale(.98)}
+.btn-solid{background:var(--accent);color:#181104}
+.btn-solid:hover{background:#ff9c33}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.hero-quote{margin-top:38px;max-width:430px;background:rgba(21,24,29,.42);border:1px solid rgba(255,255,255,.18);border-radius:var(--r);padding:18px 20px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hero-quote .tag{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#b9c0c9}
+.hero-quote .stars{color:var(--accent);display:flex;gap:3px;margin-top:8px}
+.hero-quote .stars svg{width:15px;height:15px}
+.hq-body{position:relative;min-height:86px;margin-top:8px}
+.hq-item{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;color:#eef0f3;font-size:.95rem;line-height:1.55}
+.hq-item.on{opacity:1}
+.hq-item .who{display:block;margin-top:6px;color:#b9c0c9;font-size:.83rem;font-weight:600}
+@media (max-width:520px){.hq-body{min-height:118px}}
+
+/* sections */
+section{padding:88px 0}
+@media (max-width:768px){section{padding:64px 0}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* services */
+#services{background:var(--bone)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+@media (max-width:960px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.svc-grid{grid-template-columns:1fr}}
+.svc{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
+.svc:hover{transform:translateY(-5px);box-shadow:0 18px 40px -18px rgba(21,24,29,.35)}
+.svc figure{aspect-ratio:16/10;overflow:hidden}
+.svc img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.05);transition:transform .5s ease}
+.svc:hover img{transform:scale(1.05)}
+.svc .pad{padding:20px 22px 24px}
+.svc .lab{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-d)}
+.svc .lab svg{width:14px;height:14px}
+.svc h3{font-size:1.28rem;font-weight:600;text-transform:uppercase;letter-spacing:.02em;margin-top:8px}
+.svc p{font-size:.94rem;margin-top:8px;color:var(--mut)}
+
+/* about */
+#about{background:var(--ink);color:#c9ced5}
+#about .grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+@media (max-width:880px){#about .grid{grid-template-columns:1fr;gap:36px}}
+.about-photo{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3}
+.about-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.05)}
+.about-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(20deg,rgba(21,24,29,.42),transparent 55%)}
+.about-photo .corner{position:absolute;left:0;bottom:0;background:var(--accent);color:#181104;font-family:var(--disp);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem;padding:10px 18px;border-radius:0 var(--r) 0 0;z-index:2}
+#about p{margin-top:16px;max-width:58ch}
+.checks{list-style:none;margin-top:26px;display:grid;gap:14px}
+.checks li{display:flex;gap:13px;align-items:flex-start;color:#e6e9ec;font-weight:500}
+.checks svg{width:22px;height:22px;flex:none;color:var(--accent);margin-top:2px}
+
+/* crew */
+#crew{background:var(--bone)}
+.badge{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:6px 14px;border-radius:999px;border:1px dashed rgba(21,24,29,.3);color:var(--mut);font-size:.8rem;font-weight:600}
+.badge svg{width:13px;height:13px}
+.crew-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+@media (max-width:820px){.crew-grid{grid-template-columns:1fr;max-width:440px}}
+.crew-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;transition:transform .25s ease,box-shadow .25s ease}
+.crew-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px -18px rgba(21,24,29,.3)}
+.ava{width:64px;height:64px;border-radius:50%;background:var(--ink);border:2.5px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:600;font-size:1.35rem;color:var(--bone);letter-spacing:.03em}
+.crew-card h3{font-size:1.2rem;text-transform:uppercase;font-weight:600}
+.crew-card .role{color:var(--accent-d);font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-top:-8px}
+.crew-card p{font-size:.93rem;color:var(--mut)}
+
+/* reviews */
+#reviews{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rev-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:22px;margin-top:40px}
+@media (max-width:820px){.rev-grid{grid-template-columns:1fr}}
+.rev-col{display:grid;gap:22px}
+.rev{background:var(--bone);border:1px solid var(--line);border-radius:var(--r);padding:26px 26px 24px;display:flex;flex-direction:column;gap:12px}
+.rev.big{justify-content:center}
+.rev .stars{display:flex;gap:3px;color:var(--accent)}
+.rev .stars svg{width:16px;height:16px}
+.rev blockquote{color:var(--ink);font-size:1.02rem;line-height:1.6}
+.rev.big blockquote{font-size:1.2rem;font-family:var(--disp);font-weight:500;line-height:1.5}
+.rev .who{color:var(--mut);font-size:.88rem;font-weight:600}
+.rev-actions{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn-dark{background:var(--ink);color:var(--bone)}
+.btn-dark:hover{background:var(--ink-3)}
+
+/* review banner */
+#review-banner{background:var(--ink-2);padding:64px 0}
+#review-banner .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:26px}
+#review-banner h2{font-size:clamp(1.5rem,3.4vw,2.2rem)}
+#review-banner p{color:var(--mut-d);margin-top:8px;max-width:52ch}
+
+/* contact */
+#contact{background:var(--bone)}
+.contact-card{margin-top:44px;background:var(--ink);border-radius:calc(var(--r) + 6px);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+@media (max-width:880px){.contact-card{grid-template-columns:1fr;min-height:0}}
+.contact-map{min-height:320px}
+.contact-map iframe{width:100%;height:100%;min-height:320px;border:0;display:block;filter:saturate(.85) contrast(1.02)}
+.contact-info{padding:44px 42px;color:#c9ced5;display:flex;flex-direction:column;gap:22px}
+@media (max-width:520px){.contact-info{padding:34px 24px}}
+.contact-info h3{color:var(--bone);font-size:1.6rem;text-transform:uppercase;font-weight:600}
+.contact-btns{display:grid;gap:12px}
+.contact-btns .btn{width:100%}
+.info-rows{display:grid;gap:14px;margin-top:4px}
+.info-rows .row{display:flex;gap:14px;align-items:flex-start;font-size:.95rem}
+.info-rows svg{width:19px;height:19px;flex:none;color:var(--accent);margin-top:3px}
+.info-rows a:hover{color:#fff}
+.socials{display:flex;gap:12px;margin-top:6px}
+.socials a{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-d);display:flex;align-items:center;justify-content:center;color:#c9ced5;transition:color .2s,border-color .2s,background .2s}
+.socials a:hover{color:#fff;border-color:var(--accent)}
+.socials svg{width:18px;height:18px}
+@media (max-width:880px){
+  .contact-card{display:flex;flex-direction:column-reverse}
+}
+
+/* footer */
+footer{background:var(--ink);border-top:1px solid var(--line-d);padding:54px 0 34px;color:var(--mut-d)}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:34px;align-items:flex-start}
+.foot-logo{font-family:var(--disp);font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--bone);display:flex;align-items:center;gap:10px}
+.foot-logo svg{width:20px;height:20px}
+footer .cols{display:flex;gap:60px;flex-wrap:wrap}
+footer .col{display:grid;gap:9px;font-size:.92rem}
+footer .col b{color:#e6e9ec;font-weight:600;margin-bottom:4px}
+footer .col a:hover{color:#fff}
+.foot-base{margin-top:40px;padding-top:22px;border-top:1px solid var(--line-d);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:.85rem}
+</style>
+</head>
+<body>
+
+<div id="intro" aria-hidden="true"><div class="mark">Robinson <b>Electrical</b></div></div>
+
+<header>
+  <nav class="nav" aria-label="Main">
+    <a class="logo" href="#top" aria-label="Robinson Electrical Limited, home">
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#ef8a1d"/><path d="M36 10 18 36h11l-3 18 20-28H34l2-16z" fill="#15181d"/></svg>
+      Robinson Electrical
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="nav-phone" href="tel:+6421338390"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z"/></svg>021 338 390</a></li>
+    </ul>
+    <button id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-slides" aria-hidden="true">
+    <div class="slide on" style="background-image:url('img/hero-1.jpg')"></div>
+    <div class="slide" data-src="img/hero-2.jpg"></div>
+    <div class="slide" data-src="img/hero-3.jpg"></div>
+  </div>
+  <div class="wrap">
+    <span class="hero-eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Stratford, Taranaki</span>
+    <h1>Electricians for Stratford and central Taranaki</h1>
+    <p>Rewires, switchboards, fault finding, new builds and farm jobs, done properly by a local crew.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-solid" href="tel:+6421338390"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z"/></svg>Call 021 338 390</a>
+      <a class="btn btn-ghost" href="#contact">Get a quote</a>
+    </div>
+    <div class="hero-quote" role="group" aria-label="Customer reviews">
+      <span class="tag">Example reviews</span>
+      <div class="stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+      </div>
+      <div class="hq-body" id="hqBody"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>What we do</h2>
+      <p class="sub">Domestic, rural and light commercial electrical work across Stratford, Eltham, Inglewood and the wider district.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <figure><img src="img/card-rewire.jpg" alt="Electrician wiring a wall outlet box during a renovation" width="720" height="450" loading="lazy"></figure>
+        <div class="pad">
+          <span class="lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>Homes</span>
+          <h3>Rewires &amp; repairs</h3>
+          <p>Fault finding, dead circuits, extra power points and full or partial rewires for older Taranaki homes.</p>
+        </div>
+      </article>
+      <article class="svc reveal">
+        <figure><img src="img/card-newbuild.jpg" alt="Builder standing on the timber framing of a new house" width="720" height="450" loading="lazy"></figure>
+        <div class="pad">
+          <span class="lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>Builds</span>
+          <h3>New builds &amp; renos</h3>
+          <p>Pre-wire to fit-off for new houses, sleepouts and extensions, working in with your builder from day one.</p>
+        </div>
+      </article>
+      <article class="svc reveal">
+        <figure><img src="img/hero-2.jpg" alt="Electrician working on wall-mounted switchgear" width="720" height="450" loading="lazy"></figure>
+        <div class="pad">
+          <span class="lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>Power</span>
+          <h3>Switchboard upgrades</h3>
+          <p>Old fuse boards swapped for modern switchboards with RCD protection, tested and certified.</p>
+        </div>
+      </article>
+      <article class="svc reveal">
+        <figure><img src="img/card-lighting.jpg" alt="Modern open-plan kitchen with pendant lighting" width="720" height="450" loading="lazy"></figure>
+        <div class="pad">
+          <span class="lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg>Lighting</span>
+          <h3>Lighting &amp; LED</h3>
+          <p>Indoor and outdoor lighting, LED upgrades and sensor lights that trim the power bill.</p>
+        </div>
+      </article>
+      <article class="svc reveal">
+        <figure><img src="img/card-rural.jpg" alt="Dairy cow standing in a green paddock" width="720" height="450" loading="lazy"></figure>
+        <div class="pad">
+          <span class="lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l9-6 9 6v11M3 14h18M8 21v-4h8v4"/></svg>Rural</span>
+          <h3>Farm &amp; shed electrical</h3>
+          <p>Dairy sheds, water pumps and workshop power, built to cope with wet, dust and hard use.</p>
+        </div>
+      </article>
+      <article class="svc reveal">
+        <figure><img src="img/card-heating.jpg" alt="Wall thermostat showing the heating set temperature" width="720" height="450" loading="lazy"></figure>
+        <div class="pad">
+          <span class="lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4a2 2 0 1 0-4 0v9.5a4 4 0 1 0 4 0V4z"/></svg>Comfort</span>
+          <h3>Hot water &amp; heating</h3>
+          <p>Hot water cylinder faults, heat pump circuits and thermostat wiring, sorted without fuss.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="dark">
+  <div class="wrap">
+    <div class="grid">
+      <div class="about-photo reveal">
+        <img src="img/about.jpg" alt="Workbench with technical drawings, tools and cable fittings" width="900" height="675" loading="lazy">
+        <span class="corner">Stratford based</span>
+      </div>
+      <div class="reveal">
+        <h2>Local sparkies, straight answers</h2>
+        <p>Robinson Electrical Limited is a Stratford electrical firm working across central Taranaki, from town houses to dairy sheds out Toko way. Ring Mike, describe the job, and you get a clear answer on what it needs and what it will cost.</p>
+        <p>Every job is done to NZ wiring standards and signed off with the right certification, then left tidy. No half-finished work, no surprises on the invoice.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 3 3 5-6"/></svg>Locally owned and operated in Stratford</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 3 3 5-6"/></svg>Clear quotes before the work starts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 3 3 5-6"/></svg>Certified work to NZ wiring standards</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREW -->
+<section id="crew">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Meet the crew</h2>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5v.5"/></svg>Example team layout, updated with your real crew and photos</span>
+    </div>
+    <div class="crew-grid">
+      <div class="crew-card reveal">
+        <span class="ava">M</span>
+        <h3>Mike</h3>
+        <span class="role">Owner</span>
+        <p>Your first point of contact. Quotes the job, runs the schedule and keeps every project moving.</p>
+      </div>
+      <div class="crew-card reveal">
+        <span class="ava">RE</span>
+        <h3>Registered Electrician</h3>
+        <span class="role">On the tools</span>
+        <p>Handles rewires, switchboards and fault callouts across town and the surrounding farms.</p>
+      </div>
+      <div class="crew-card reveal">
+        <span class="ava">AP</span>
+        <h3>Apprentice Electrician</h3>
+        <span class="role">Learning the trade</span>
+        <p>Backs up the team on site and keeps jobs running smoothly, from cable pulls to clean-up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>What locals say</h2>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5v.5"/></svg>Example reviews, swapped for your live Google reviews on the final site</span>
+    </div>
+    <div class="rev-grid">
+      <div class="rev big reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <blockquote>&ldquo;Mike sorted a dead circuit in the milking shed the same morning I rang. Fair price, and he explained what caused it.&rdquo;</blockquote>
+        <span class="who">Aroha T., Stratford</span>
+      </div>
+      <div class="rev-col">
+        <div class="rev reveal">
+          <div class="stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          </div>
+          <blockquote>&ldquo;Rewired our 1970s place without tearing it apart. Tidy work, and they turned up when they said they would.&rdquo;</blockquote>
+          <span class="who">Grant M., Eltham</span>
+        </div>
+        <div class="rev reveal">
+          <div class="stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          </div>
+          <blockquote>&ldquo;New switchboard and outdoor power for the sleepout. The quote was clear and the invoice matched it.&rdquo;</blockquote>
+          <span class="who">Sharon K., Midhirst</span>
+        </div>
+      </div>
+    </div>
+    <div class="rev-actions reveal">
+      <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&amp;query=Robinson%20Electrical%20Limited%20Stratford%20Taranaki" target="_blank" rel="noopener">See all our Google reviews<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW BANNER -->
+<section id="review-banner" class="dark">
+  <div class="wrap">
+    <div class="row reveal">
+      <div>
+        <h2>Happy with our work? Leave us a review</h2>
+        <p>A quick Google review helps other Taranaki locals find a sparky they can rely on.</p>
+      </div>
+      <a class="btn btn-solid" href="https://www.google.com/maps/search/?api=1&amp;query=Robinson%20Electrical%20Limited%20Stratford%20Taranaki" target="_blank" rel="noopener">Leave a review<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Book a job or get a quote</h2>
+      <p class="sub">Ring or email with what you need done and roughly where you are, and we will come back to you with a time and a price.</p>
+    </div>
+    <div class="contact-card reveal">
+      <div class="contact-map">
+        <iframe title="Map showing Robinson Electrical Limited in Stratford, Taranaki" src="https://www.google.com/maps?q=Robinson%20Electrical%20Limited%2C%20Stratford%2C%20Taranaki%2C%20New%20Zealand&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+      <div class="contact-info">
+        <h3>Robinson Electrical</h3>
+        <div class="contact-btns">
+          <a class="btn btn-solid" href="tel:+6421338390"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z"/></svg>Call Robinson Electrical</a>
+          <a class="btn btn-ghost" data-gmail data-user="mike" data-domain="robinsonelectrical.co.nz" data-su="Quote%20request%20from%20the%20website" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email Robinson Electrical</a>
+        </div>
+        <div class="info-rows">
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z"/></svg><a href="tel:+6421338390">021 338 390</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a data-gmail data-user="mike" data-domain="robinsonelectrical.co.nz" href="#contact"><span data-email-text data-user="mike" data-domain="robinsonelectrical.co.nz"></span></a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Stratford, Taranaki</span></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l3 2"/></svg><span>Monday to Friday, 8:00am to 4:30pm</span></div>
+        </div>
+        <div class="socials">
+          <a href="https://www.facebook.com/robinsonelectrical182" target="_blank" rel="noopener" aria-label="Robinson Electrical on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.2 0-1-.1-1.9-.1-2 0-3.4 1.2-3.4 3.5V11H8.7v3h2.4v7h2.4z"/></svg></a>
+          <a href="https://www.instagram.com/explore/search/keyword/?q=Robinson%20Electrical%20Stratford" target="_blank" rel="noopener" aria-label="Search Robinson Electrical on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.8v.01"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="foot-logo"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#ef8a1d"/><path d="M36 10 18 36h11l-3 18 20-28H34l2-16z" fill="#15181d"/></svg>Robinson Electrical</span>
+        <p style="max-width:34ch;margin-top:14px;font-size:.92rem">Registered electricians serving Stratford and central Taranaki.</p>
+        <div class="socials" style="margin-top:16px">
+          <a href="https://www.facebook.com/robinsonelectrical182" target="_blank" rel="noopener" aria-label="Robinson Electrical on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.2 0-1-.1-1.9-.1-2 0-3.4 1.2-3.4 3.5V11H8.7v3h2.4v7h2.4z"/></svg></a>
+          <a href="https://www.instagram.com/explore/search/keyword/?q=Robinson%20Electrical%20Stratford" target="_blank" rel="noopener" aria-label="Search Robinson Electrical on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.8v.01"/></svg></a>
+        </div>
+      </div>
+      <div class="cols">
+        <div class="col">
+          <b>Site</b>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="col">
+          <b>Contact</b>
+          <a href="tel:+6421338390">021 338 390</a>
+          <span>Stratford, Taranaki</span>
+          <span>Mon to Fri, 8:00am to 4:30pm</span>
+        </div>
+        <div class="col">
+          <b>Legal</b>
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; <span id="year"></span> Robinson Electrical Limited. All rights reserved.</span>
+      <span>Stratford, Taranaki, New Zealand</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // intro
+  window.addEventListener('load', function(){ document.body.classList.add('loaded'); });
+  setTimeout(function(){ document.body.classList.add('loaded'); }, 2600);
+
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // mobile nav
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e){
+    if(e.target.closest('a')){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
+  });
+
+  // hero slides
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slides .slide'));
+  slides.forEach(function(s){
+    var src = s.getAttribute('data-src');
+    if(src){ s.style.backgroundImage = "url('" + src + "')"; }
+  });
+  if(!reduce && slides.length > 1){
+    var si = 0;
+    setInterval(function(){
+      slides[si].classList.remove('on');
+      si = (si + 1) % slides.length;
+      slides[si].classList.add('on');
+    }, 6000);
+  }
+
+  // reviews array drives hero widget
+  var quotes = [
+    {t:'"Mike sorted a dead circuit in the milking shed the same morning I rang. Fair price, and he explained what caused it."', w:'Aroha T., Stratford'},
+    {t:'"Rewired our 1970s place without tearing it apart. Tidy work, and they turned up when they said they would."', w:'Grant M., Eltham'},
+    {t:'"New switchboard and outdoor power for the sleepout. The quote was clear and the invoice matched it."', w:'Sharon K., Midhirst'}
+  ];
+  var hq = document.getElementById('hqBody');
+  quotes.forEach(function(q, i){
+    var d = document.createElement('div');
+    d.className = 'hq-item' + (i === 0 ? ' on' : '');
+    d.innerHTML = q.t + '<span class="who">' + q.w + '</span>';
+    hq.appendChild(d);
+  });
+  if(!reduce && quotes.length > 1){
+    var qi = 0, items = hq.children;
+    setInterval(function(){
+      items[qi].classList.remove('on');
+      qi = (qi + 1) % items.length;
+      items[qi].classList.add('on');
+    }, 6000);
+  }
+
+  // scroll reveals
+  var revs = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    revs.forEach(function(r){ io.observe(r); });
+  } else {
+    revs.forEach(function(r){ r.classList.add('in'); });
+  }
+
+  // email links (built from parts so no literal address ships in the HTML)
+  document.querySelectorAll('a[data-gmail]').forEach(function(a){
+    var to = a.getAttribute('data-user') + '@' + a.getAttribute('data-domain');
+    a.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + (a.getAttribute('data-su') || '') + '&body=' + (a.getAttribute('data-body') || '');
+    a.target = '_blank'; a.rel = 'noopener';
+  });
+  document.querySelectorAll('[data-email-text]').forEach(function(s){
+    s.textContent = s.getAttribute('data-user') + '@' + s.getAttribute('data-domain');
+  });
+})();
+</script>
+</body>
+</html>
