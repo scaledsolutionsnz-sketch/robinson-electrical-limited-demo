@@ -177,10 +177,16 @@ section{padding:88px 0}
 
 /* facebook */
 #facebook{background:var(--bone);border-top:1px solid var(--line)}
-.fb-wrap{margin-top:38px;display:grid;grid-template-columns:1fr 500px;gap:34px;align-items:start}
+.fb-wrap{margin-top:38px;display:grid;grid-template-columns:1fr 400px;gap:34px;align-items:start}
 @media (max-width:920px){.fb-wrap{grid-template-columns:1fr}}
-.fb-embed{max-width:500px;width:100%;margin:0 auto;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff}
-.fb-embed iframe{width:100%;height:760px;border:0;overflow:hidden;display:block}
+/* Facebook renders the post at a fixed 500 wide and we cannot ask it for a
+   shorter one, so the whole frame is scaled down instead of cropped: the box
+   below is the scaled size, 500 x 760 at 0.8. Nothing is cut off, it just
+   takes up less of the page. */
+.fb-embed{width:400px;height:608px;max-width:100%;margin:0 auto;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff}
+.fb-embed iframe{width:500px;height:760px;border:0;overflow:hidden;display:block;transform:scale(.8);transform-origin:top left}
+/* Narrower than the scaled frame: shrink again rather than clip the right edge. */
+@media (max-width:430px){.fb-embed{width:300px;height:456px}.fb-embed iframe{transform:scale(.6)}}
 .fb-copy .followers{display:inline-flex;align-items:center;gap:9px;margin-top:16px;padding:8px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:700;font-size:.92rem}
 .fb-copy .followers svg{width:18px;height:18px;color:var(--accent);flex:none}
 .rev blockquote{color:var(--ink);font-size:1.02rem;line-height:1.6}
