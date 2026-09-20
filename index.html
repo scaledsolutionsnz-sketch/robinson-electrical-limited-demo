@@ -267,6 +267,15 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 @media(max-width:640px){.project-grid,.sponsor-grid{grid-template-columns:1fr}.project-grid{gap:26px}.sponsor-boxing{min-height:590px}.sponsor-copy{padding:24px}.club-crest{padding:30px}.club-crest img{width:225px}}
 
 #intro .mark img{display:block;width:min(320px,75vw);height:auto}.logo img{width:118px;height:auto;max-height:58px;object-fit:contain}</style>
+<style>
+.fergus-embed{margin-top:40px;background:#fff;border:1px solid var(--line);border-radius:calc(var(--r) + 6px);overflow:hidden;box-shadow:0 14px 34px -24px rgba(21,24,29,.35)}
+.fergus-embed-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:30px 34px 24px;border-bottom:1px solid var(--line)}
+.fergus-embed-head h3{margin-top:5px;font-size:1.65rem;text-transform:uppercase;font-weight:600}
+.fergus-embed-head p{max-width:58ch;margin-top:9px;color:var(--mut)}
+.fergus-embed-link{flex:none;color:var(--accent-d);font-size:.9rem;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.fergus-embed-frame{display:block;width:100%;height:790px;border:0;background:#fff}
+@media(max-width:700px){.fergus-embed-head{display:block;padding:26px 22px 20px}.fergus-embed-link{display:inline-block;margin-top:14px}.fergus-embed-frame{height:860px}}
+</style>
 </head>
 <body>
 
@@ -523,6 +532,18 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
       <h2>Book a job or get a quote</h2>
       <p class="sub">Ring or email with what you need done and roughly where you are, and we will come back to you with a time and a price.</p>
     </div>
+    <div class="fergus-embed reveal">
+      <div class="fergus-embed-head">
+        <div>
+          <span class="section-kicker">Online enquiry</span>
+          <h3>Tell us what you need done.</h3>
+          <p>Use the form below to send the job details through to Robinson Electrical. We will get back to you to arrange the next step.</p>
+        </div>
+        <a class="fergus-embed-link" href="https://my.fergus.com/contact/63bdc5e9-5dfd-4cc7-874e-87cf37b50738" target="_blank" rel="noopener">Open form in a new tab</a>
+      </div>
+      <iframe class="fergus-embed-frame" title="Robinson Electrical contact form" src="https://my.fergus.com/contact/63bdc5e9-5dfd-4cc7-874e-87cf37b50738" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+
     <div class="contact-card reveal">
       <div class="contact-map">
         <iframe title="Map showing Robinson Electrical Limited in Stratford, Taranaki" src="https://www.google.com/maps?q=Robinson%20Electrical%20Limited%2C%20Stratford%2C%20Taranaki%2C%20New%20Zealand&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
